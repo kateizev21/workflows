@@ -1,0 +1,23 @@
+Name : shell commands
+    On :[pull_request]
+  Jobs:
+    run-shell-Command:
+    Runs-on :ubuntu-latest 
+    steps:
+    - name : checkout
+    uses : action checkout@v3
+    name:
+    run:echo "Hello World"
+    - Name: multi string
+    run:|
+    node -v
+    npm -v
+    run-windows-commands:
+    rus-on: windows-latest
+    needs: ["run-shell-command"]
+    steps:
+    -name:Directory
+    -run: Get-location
+    - name:Directory bash
+    run: PWD
+    shell: bash
